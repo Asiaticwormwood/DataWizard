@@ -1,0 +1,45 @@
+#top-navbar{
+background-color: #e3eff1;
+    margin-bottom: 10px;
+}
+
+#left-navbar{
+background-color: #e3eff1;
+    margin-bottom: 10px;
+}
+
+#index-nav a {
+
+}
+
+#top-half > div{
+    /*height: 300px;*/
+    max-height: 300px;
+}
+
+#prompt-form {
+    max-height: 300px;
+}
+
+#output-panel {
+    height:300px;
+    /*width: 100px;*/
+}
+
+
+#left-nav-header  {
+    float: none;
+    height: 100px;
+}
+
+.brand-img {
+      height: 80px;
+    width: 80px;
+    }
+
+.submenu-show {
+    /*display: block!important;*/
+}
+row {
+
+}
