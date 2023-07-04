@@ -1,4 +1,4 @@
-#page-header {
+#page-header #header-right a {
     color: white;
 }
 .container-fluid {
@@ -9,8 +9,14 @@
 #page-header div {
     height: 60px;
     font-size: 16px;
+    color: white;
     background-color: #00857c;
 }
+#page-header .glyphicon::before {
+    position: relative;
+    top:0;
+}
+
 
 div.need-border {
     border-right: white;
@@ -45,25 +51,44 @@ div.vertical-sep {
     font-weight: lighter !important;
 }
 
-a {
-    color: white;
-    text-decoration: none;
+/*a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*}*/
+
+#up-nav ul.second-menu a{
+    height: 30px!important;
+    font-size: 14px;
+}
+#up-nav ul.second-menu .glyphicon::before {
+    position: relative;
+    top:1px;
+}
+#page-header .bi::before {
+    font-weight: 700!important;
+    font-size: 18px;
 }
 
-a:hover, a:visited {
-    color: white;
+/*a:hover, a:visited {*/
+/*    color: white;*/
+/*}*/
+
+.second-menu .glyphicon::before {
+    margin-right: 10px;
 }
 
-.glyphicon {
-    top:0;
-}
-a.glyphicon {
+#up-nav {
     font-size: 16px;
 }
 
-#usr-logo, #logo {
-    top:0;
-    right: 30px;
+
+.second-menu .divider {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+#usr-logo::before {
     font-size: 20px!important;
 }
 .nav-row {
@@ -150,4 +175,15 @@ div.one-intro:hover {
     position: relative;
     top: 15px;
     font-size: 14px;
+}
+
+#page-header a:hover{
+    text-decoration: underline;
+}
+#top-navbar a:hover{
+    text-decoration: underline;
+}
+
+#page-header .bi-robot::before {
+    font-size: 20px;
 }
