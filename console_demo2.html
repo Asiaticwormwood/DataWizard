@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="static/css/navbar.css">
     <link rel="stylesheet" href="static/css/console.css">
     <link rel="stylesheet" href="static/bootstrap-3.4.1/css/bootstrap.css">
-        <link rel="stylesheet" href="static/icons/font/bootstrap-icons.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/icons/font/bootstrap-icons.min.css" crossorigin="anonymous">
 
-        <script type="text/javascript" src="static/js/jquery-3.5.1.min.js"></script>
-        <script type="text/javascript" src="static/js/popper-2.11.8.js"></script>
-        <script type="text/javascript" src="static/bootstrap-3.4.1/js/bootstrap.js"></script>
+    <script type="text/javascript" src="static/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="static/js/popper-2.11.8.js"></script>
+    <script type="text/javascript" src="static/bootstrap-3.4.1/js/bootstrap.js"></script>
 
-<!--    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
-<!--    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>-->
-<!--    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <!--    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
 
 </head>
 <body>
 <div class="container-fluid">
-        <!--页头-->
+    <!--页头-->
     <div id="page-header" class="row  ver-hor-text-center">
         <div class="col-md-1 ver-hor-text-center hidden-sm hidden-xs">
             <span id="logo" class=" col-md-offset-11 ver-hor-text-center bi bi-gpu-card"></span>
@@ -225,7 +225,7 @@
         <!--prompt文本框-->
         <div class="col-md-6">
             <i class="bi bi-arrow-right-circle-fill pull-right" id="submitButton" title="submit"></i>
-                <i class="bi bi-repeat pull-right" id="clearButton" title="clear"></i>
+            <i class="bi bi-repeat pull-right" id="clearButton" title="clear"></i>
 
 
             <form id="prompt-form" role="form">
@@ -234,7 +234,19 @@
 
 
                     <textarea id="prompt-input" class="form-control pre-scrollable" rows="10"
-                              placeholder="Enter prompt here ..."></textarea>
+                              placeholder="在这里输入指令...">
+1. 分析价格与以下因素的关系与相关性
+	Utilities: Type of utilities available
+	Neighborhood: Physical locations within Ames city limits
+	YearBuilt: Original construction date
+
+说明：
+    对数值型变量和分类变量采取适合的相关性分析方法
+    数值型变量：皮尔森相关
+    分类变量：卡方检验
+
+2. 请提供相应的图表和解释来支持这些洞察。
+                    </textarea>
                 </div>
             </form>
         </div>
@@ -244,7 +256,26 @@
         <div class="col-md-6">
             <label for="codeEditor">Python</label>
             <textarea class="form-control pre-scrollable no-wrap-textarea" rows="6" id="codeEditor">
-
+df['Utilities_num'] = df['Utilities'].map({'AllPub': 3, 'NoSewr': 2, 'NoSeWa': 1, 'ELO': 0})
+sns.boxplot(x='Utilities_num', y='SalePrice', data=df)
+plt.show(block=False)
+plt.close('all')
+corr, p_value = pearsonr(df['Utilities_num'], df['SalePrice'])
+print('Utilities与SalePrice的皮尔森相关系数为：', corr)
+print('p值为：', p_value)
+sns.boxplot(x='Neighborhood', y='SalePrice', data=df)
+plt.xticks(rotation=90)
+plt.show(block=False)
+plt.close('all')
+cross_table = pd.crosstab(df['Neighborhood'], df['SalePrice'])
+chi2, p_value, dof, expected = chi2_contingency(cross_table)
+print('Neighborhood与SalePrice的卡方检验p值为：', p_value)
+sns.scatterplot(x='YearBuilt', y='SalePrice', data=df)
+plt.show(block=False)
+plt.close('all')
+corr, p_value = pearsonr(df['YearBuilt'], df['SalePrice'])
+print('YearBuilt与SalePrice的皮尔森相关系数为：', corr)
+print('p值为：', p_value)
         </textarea>
         </div>
     </div>
@@ -254,7 +285,22 @@
         <div class="col-md-12">
             <label for="displayBox" class="center">Output</label>
             <div class="pre-scrollable well" id="displayBox">
+                <strong>Results:</strong>
+                <p>
+                    Utilities与SalePrice的皮尔森相关系数为： 0.014314296147248776 <br>
+                    p值为： 0.5847167739689056 <br>
+                    Neighborhood与SalePrice的卡方检验p值为： 1.364960102688296e-08 <br>
+                    YearBuilt与SalePrice的皮尔森相关系数为： 0.5228973328794969 <br>
+                    p值为： 2.9902290990137165e-103 <br>
+                </p>
+                <strong>Insight:</strong>
+                <p>
+                    根据我们的分析，Utilities和SalePrice之间的关系不太明显，皮尔森相关系数只有0.014，p值为0.585。<br>
+                    而Neighborhood和SalePrice之间的关系则非常显著，卡方检验的p值为1.36e-08。<br>
+                    此外，YearBuilt和SalePrice之间也存在一定的相关性，皮尔森相关系数为0.523，p值为2.99e-103。<br>
+                    我们可以通过这些结果来更好地理解价格与这些因素之间的关系。
 
+                </p>
             </div>
 
         </div>

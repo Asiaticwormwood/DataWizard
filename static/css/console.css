@@ -82,3 +82,11 @@
 #displayBox {
     height: inherit;
 }
+img.img-responsive  {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+strong {
+    font-size: 20px;
+}

@@ -155,7 +155,6 @@
         </div>
     </div>
 
-
     <!-- 新建项目模态框 -->
     <div class="modal fade" id="createProjectModal" tabindex="-1" role="dialog">
         <div class="modal-dialog">
@@ -234,7 +233,12 @@
 
 
                     <textarea id="prompt-input" class="form-control pre-scrollable" rows="10"
-                              placeholder="Enter prompt here ..."></textarea>
+                              placeholder="在这里输入指令...">
+1. 进行数据清洗。
+2. 对数据进行描述性分析,充分考虑当前数据的类型特点。本次描述性分析的主要目的包括：
+    a. 描述数据的分布情况：包括直方图、箱线图、密度图等，用于了解数据的分布情况和异常值情况。
+    b. 描述数据的相关性：包括相关系数、散点图等，用于了解不同变量之间的相关性。
+                    </textarea>
                 </div>
             </form>
         </div>
@@ -244,7 +248,27 @@
         <div class="col-md-6">
             <label for="codeEditor">Python</label>
             <textarea class="form-control pre-scrollable no-wrap-textarea" rows="6" id="codeEditor">
-
+print(df.isnull().sum())
+num_cols = df.select_dtypes(include=np.number).columns.tolist()
+for col in num_cols:
+	df[col].fillna(df[col].median(), inplace=True)
+cat_cols = df.select_dtypes(include='object').columns.tolist()
+for col in cat_cols:
+	df[col].fillna(df[col].mode()[0], inplace=True)
+print(df.describe())
+sns.histplot(df['SalePrice'], kde=True)
+plt.show(block=False)
+plt.close('all')
+sns.boxplot(x='OverallQual', y='SalePrice', data=df)
+plt.show(block=False)
+plt.close('all')
+sns.scatterplot(x='GrLivArea', y='SalePrice', data=df)
+plt.show(block=False)
+plt.close('all')
+corr_matrix = df.corr()
+sns.heatmap(corr_matrix, cmap='coolwarm')
+plt.show(block=False)
+plt.close('all')
         </textarea>
         </div>
     </div>
@@ -254,7 +278,9 @@
         <div class="col-md-12">
             <label for="displayBox" class="center">Output</label>
             <div class="pre-scrollable well" id="displayBox">
-
+                <img src="static/images/图片1.png" alt="示例图片" class="img-responsive">
+                <img src="static/images/图片2.png" alt="示例图片" class="img-responsive">
+                <img src="static/images/图片3.png" alt="示例图片" class="img-responsive">
             </div>
 
         </div>
