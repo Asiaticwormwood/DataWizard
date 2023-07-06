@@ -1,0 +1,84 @@
+#pwd {
+    background-color:#e7e7e7;
+    height: 20px;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-bottom: 3px;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+#top-half, #bottom-half {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#codeEditor, #prompt-input{
+    height: 25vh;
+    /*height: 80%;*/
+}
+#prompt-form * {
+    margin-bottom: 0;
+}
+
+#top-half label, #bottom-half label {
+    font-size: 30px !important;
+    padding-left: 5px;
+    height: 7vh;
+    line-height:7vh;
+
+    margin-bottom: 0;
+}
+#top-half{
+    height: 32vh;
+}
+#displayBox {
+    margin-bottom: 3px;
+}
+#clearButton::before, #submitButton::before {
+    width: 50px;
+    height: 30px;
+
+    /*居中*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+    font-weight: lighter;
+
+    position: relative;
+    top: 8px;
+}
+
+#clearButton::before {
+    color: black;
+    font-weight: 500!important;
+}
+#submitButton::before{
+    color: #00857c;
+}
+#clearButton:hover::before {
+    font-weight: 900!important;
+}
+#submitButton:hover::before {
+    color: #0b2e13;
+}
+
+.no-wrap-textarea {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.half-screen-height {
+  height: 50vh;
+}
+
+.half-screen-height>div {
+    height: 90%;
+}
+#displayBox {
+    height: inherit;
+}

@@ -1,96 +1,11 @@
-#page-header {
-    color: white;
-}
-.container-fluid {
-    color: black;
+#pwd {
+    background-color:#e7e7e7;
+    height: 20px;
     font-size: 16px;
-    background-color: #fdfdfd;
+    padding-left: 10px;
+    margin-bottom: 3px;
 }
 
-#page-header div {
-    height: 60px;
-    font-size: 16px;
-    background-color: #00857c;
-}
-#bi-exit::before {
-    font-size: 16px;
-}
-
-div.need-border {
-    border-right: white;
-    border-right-width: 2px;
-    border-right-style: solid;
-    height: 44px !important;
-}
-
-div.header-text-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.left-text-center {
-    display: flex;
-    align-items: center;
-}
-
-div#proj-name-zh {
-    height: 35px !important;
-    font-size: 18px !important;
-}
-
-div#proj-name-en {
-    height: 25px !important;
-    font-size: 14px !important;
-}
-
-div.vertical-sep {
-    font-size: 45px !important;
-    font-weight: lighter !important;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-a:hover, a:visited {
-    color: white;
-}
-
-.glyphicon {
-    top:0;
-}
-a.glyphicon {
-    font-size: 16px;
-}
-
-#usr-logo, #logo {
-    top:0;
-    right: 30px;
-    font-size: 20px!important;
-}
-.nav-row {
-    /*padding-left: 50px;*/
-    /*padding-right: 50px;*/
-}
-#up-nav{
-    height: 70px;
-}
-ul#up-nav li a {
-    font-size: 18px;
-    color:Black!important;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/*ul#up-nav li a:link {*/
-/*    background-color: #ffffff;*/
-/*}*/
-li.active {
-    text-decoration: underline;
-}
 .input-row, .show-file-row {
     margin-left: 3%;
     margin-right: 3%;
