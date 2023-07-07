@@ -1,99 +1,3 @@
-#page-header {
-    color: white;
-}
-.container-fluid {
-    color: black;
-    font-size: 16px;
-}
-
-#page-header div {
-    height: 60px;
-    font-size: 16px;
-    background-color: #00857c;
-}
-
-div.need-border {
-    border-right: white;
-    border-right-width: 2px;
-    border-right-style: solid;
-    height: 44px !important;
-}
-
-div.header-text-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.left-text-center {
-    display: flex;
-    align-items: center;
-}
-
-div#proj-name-zh {
-    height: 35px !important;
-    font-size: 18px !important;
-}
-
-div#proj-name-en {
-    height: 25px !important;
-    font-size: 14px !important;
-}
-
-div.vertical-sep {
-    font-size: 45px !important;
-    font-weight: lighter !important;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-a:hover, a:visited {
-    color: white;
-}
-
-.glyphicon {
-    top:0;
-}
-a.glyphicon {
-    font-size: 16px;
-}
-
-#usr-logo, #logo {
-    top:0;
-    right: 30px;
-    font-size: 20px!important;
-}
-.nav-row {
-    /*padding-left: 50px;*/
-    /*padding-right: 50px;*/
-}
-#up-nav{
-    height: 70px;
-}
-ul#up-nav li a {
-    font-size: 18px;
-    color:Black!important;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/*ul#up-nav li a:link {*/
-/*    background-color: #ffffff;*/
-/*}*/
-
-#bi-exit::before {
-    font-size: 16px;
-}
-
-
-li.active {
-    text-decoration: underline;
-}
-
 #history-row{
     height: 260px;
     padding-left: 50px;
@@ -107,16 +11,20 @@ li.active {
 
 #history-row h1, #user-guide-row h1 {
     font-size: 20px;
+    font-weight: bolder;
     margin-bottom: 30px;
     margin-left: 30px;
 }
 div.one-proj {
     width: 200px;
     height: 80px;
+    margin-bottom: 15px;
     box-shadow:0 0 5px 2px #00857c;
 }
 div.one-proj:hover {
     box-shadow:0 0 12px 2px #00857c;
+    font-weight: bolder;
+    text-decoration: none;
 }
 div.one-proj a {
     color:black;
@@ -142,12 +50,25 @@ div.one-proj a {
 }
 div.one-intro:hover {
     box-shadow:0 0 12px 2px gray;
+    font-weight: bolder;
 }
 .one-intro div.glyphicon {
     top:10px ;
 }
+.one-intro div.bi {
+    position: relative;
+    top:10px ;
+}
+
 .intro-detail {
     position: relative;
     top: 15px;
     font-size: 14px;
 }
+
+/*#page-header a:hover{*/
+/*    text-decoration: underline;*/
+/*}*/
+/*#top-navbar a:hover{*/
+/*    text-decoration: underline;*/
+/*}*/

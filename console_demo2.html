@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User guide</title>
+    <title>Command Console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="static/bootstrap-3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/icons/font/bootstrap-icons.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/navbar.css">
-    <link rel="stylesheet" href="static/css/user-guide.css">
+    <link rel="stylesheet" href="static/css/console.css">
+    <link rel="stylesheet" href="static/bootstrap-3.4.1/css/bootstrap.css">
+    <link rel="stylesheet" href="static/icons/font/bootstrap-icons.min.css" crossorigin="anonymous">
 
     <script type="text/javascript" src="static/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/popper-2.11.8.js"></script>
+    <script type="text/javascript" src="static/bootstrap-3.4.1/js/bootstrap.js"></script>
+
+    <!--    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
 
 </head>
 <body>
@@ -77,7 +84,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul id="up-nav" class="nav navbar-default nav-justified">
 
-                <li role="presentation" class="active vertical-center">
+                <li role="presentation" class="vertical-center">
                     <a class="ver-hor-text-center" href="user-guide.html">
                         <div class="under"><span class="glyphicon glyphicon-home">&nbsp</span>Home</div>
                     </a></li>
@@ -108,11 +115,11 @@
                        href="data-file-upload.html">
                         <div class="under">
 
-                            <span class="glyphicon glyphicon-tasks">&nbsp</span>
-                            Data File Upload
+                            <span class="glyphicon glyphicon-tasks">&nbsp</span>Data File
+                            Upload
                         </div>
                     </a></li>
-                <li role="presentation"><a class="" href="console.html">
+                <li role="presentation" class="active"><a href="console.html">
                     <div class="under">
                         <span class="glyphicon glyphicon-console">&nbsp</span>Command Console
                     </div>
@@ -147,6 +154,7 @@
             </ul>
         </div>
     </div>
+
 
     <!-- 新建项目模态框 -->
     <div class="modal fade" id="createProjectModal" tabindex="-1" role="dialog">
@@ -208,96 +216,99 @@
         </div>
     </div>
 
-    <!--历史项目-->
-    <div id="history-row" class="row">
-        <div class="col-md-12">
-            <h1>History</h1>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="one-proj ver-hor-text-center center-block">
-                <a href="console_demo1.html">Project A</a>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="one-proj ver-hor-text-center center-block">
-                <a href="console_demo2.html">Project B</a>
-            </div>
-        </div>
-        <div class="col-md-4 hidden-sm hidden-xs">
-            <div class="one-proj ver-hor-text-center center-block">
-                <a href="#">Project C</a>
-            </div>
-        </div>
-
-
+    <!--项目位置-->
+    <div id="pwd" class="row vertical-center">
+        C:> Users> DataWizard_user> ProjectA
     </div>
-    <div id="user-guide-row" class="row user-guide">
-        <div class="col-md-12">
-            <h1>User Guide</h1>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="one-guide center-block">
-                <div class="row center-block ver-hor-text-center index">1</div>
-                <div class="row center-block ver-hor-text-center hint">Create Project</div>
-                <div class="one-intro center-block">
-                    <div class="bi bi-folder-fill text-center center-block"></div>
-                    <div class="text-center intro-detail">Please create your own project</div>
+    <!--上半部分-->
+    <div id="top-half" class="row">
+        <!--prompt文本框-->
+        <div class="col-md-6">
+            <i class="bi bi-arrow-right-circle-fill pull-right" id="submitButton" title="submit"></i>
+            <i class="bi bi-repeat pull-right" id="clearButton" title="clear"></i>
 
+
+            <form id="prompt-form" role="form">
+                <div class="form-group">
+                    <label for="prompt-input">Command</label>
+
+
+                    <textarea id="prompt-input" class="form-control pre-scrollable" rows="10"
+                              placeholder="在这里输入指令...">
+1. 分析价格与以下因素的关系与相关性
+	Utilities: Type of utilities available
+	Neighborhood: Physical locations within Ames city limits
+	YearBuilt: Original construction date
+
+说明：
+    对数值型变量和分类变量采取适合的相关性分析方法
+    数值型变量：皮尔森相关
+    分类变量：卡方检验
+
+2. 请提供相应的图表和解释来支持这些洞察。</textarea>
                 </div>
-            </div>
-
-
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="one-guide center-block">
-                <div class="row center-block ver-hor-text-center index">2</div>
-                <div class="row center-block ver-hor-text-center hint">Upload data file</div>
-                <div class="one-intro center-block">
-                    <div class="glyphicon glyphicon-tasks text-center center-block"></div>
-                    <div class="text-center intro-detail">
-                        Upload the data <br>current support csv format
-                    </div>
-
-                </div>
-            </div>
-
-
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="one-guide center-block">
-                <div class="row center-block ver-hor-text-center index">3</div>
-                <div class="row center-block ver-hor-text-center hint">Command Console</div>
-                <div class="one-intro center-block">
-                    <div class="glyphicon glyphicon-console text-center center-block"></div>
-                    <div class="text-center intro-detail">In the command console, you can easily analyze the data by
-                        only communicating with engine
-                    </div>
-
-                </div>
-            </div>
-
-
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="one-guide center-block">
-                <div class="row center-block ver-hor-text-center index">4</div>
-                <div class="row center-block ver-hor-text-center hint">Save</div>
-                <div class="one-intro center-block">
-                    <div class="glyphicon glyphicon-save text-center center-block"></div>
-                    <div class="text-center intro-detail">
-                        You can download the outputs in appropriate format
-                    </div>
-
-                </div>
-            </div>
-
-
+            </form>
         </div>
 
 
+        <!--python代码-->
+        <div class="col-md-6">
+            <label for="codeEditor">Python</label>
+            <textarea class="form-control pre-scrollable no-wrap-textarea" rows="6" id="codeEditor">
+df['Utilities_num'] = df['Utilities'].map({'AllPub': 3, 'NoSewr': 2, 'NoSeWa': 1, 'ELO': 0})
+sns.boxplot(x='Utilities_num', y='SalePrice', data=df)
+plt.show(block=False)
+plt.close('all')
+corr, p_value = pearsonr(df['Utilities_num'], df['SalePrice'])
+print('Utilities与SalePrice的皮尔森相关系数为：', corr)
+print('p值为：', p_value)
+sns.boxplot(x='Neighborhood', y='SalePrice', data=df)
+plt.xticks(rotation=90)
+plt.show(block=False)
+plt.close('all')
+cross_table = pd.crosstab(df['Neighborhood'], df['SalePrice'])
+chi2, p_value, dof, expected = chi2_contingency(cross_table)
+print('Neighborhood与SalePrice的卡方检验p值为：', p_value)
+sns.scatterplot(x='YearBuilt', y='SalePrice', data=df)
+plt.show(block=False)
+plt.close('all')
+corr, p_value = pearsonr(df['YearBuilt'], df['SalePrice'])
+print('YearBuilt与SalePrice的皮尔森相关系数为：', corr)
+print('p值为：', p_value)
+        </textarea>
+        </div>
     </div>
+    <!--            下半部分-->
+    <!--结果输出-->
+    <div id="bottom-half" class="row half-screen-height">
+        <div class="col-md-12">
+            <label for="displayBox" class="center">Output</label>
+            <div class="pre-scrollable well" id="displayBox">
+                <strong>Results:</strong>
+                <p>
+                    Utilities与SalePrice的皮尔森相关系数为： 0.014314296147248776 <br>
+                    p值为： 0.5847167739689056 <br>
+                    Neighborhood与SalePrice的卡方检验p值为： 1.364960102688296e-08 <br>
+                    YearBuilt与SalePrice的皮尔森相关系数为： 0.5228973328794969 <br>
+                    p值为： 2.9902290990137165e-103 <br>
+                </p>
+                <strong>Insight:</strong>
+                <p>
+                    根据我们的分析，Utilities和SalePrice之间的关系不太明显，皮尔森相关系数只有0.014，p值为0.585。<br>
+                    而Neighborhood和SalePrice之间的关系则非常显著，卡方检验的p值为1.36e-08。<br>
+                    此外，YearBuilt和SalePrice之间也存在一定的相关性，皮尔森相关系数为0.523，p值为2.99e-103。<br>
+                    我们可以通过这些结果来更好地理解价格与这些因素之间的关系。
+
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <!--上部导航栏-->
+    <!--test-->
 </div>
 <script type="text/javascript" src="static/js/navbar.js"></script>
+<script type="text/javascript" src="static/js/console.js"></script>
 </body>
+
 </html>

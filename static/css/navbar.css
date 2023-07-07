@@ -1,0 +1,186 @@
+#page-header #header-right a {
+    color: white;
+}
+
+.container-fluid {
+    color: black;
+    font-size: 16px;
+}
+
+#header-right > div {
+    min-width: 100px;
+}
+
+#page-header div {
+    height: 55px;
+    font-size: 16px;
+    color: white;
+    background-color: #00857c;
+}
+
+/*#page-header .glyphicon::before {*/
+/*    position: relative;*/
+/*    top:0;*/
+/*}*/
+
+
+div.need-border {
+    border-right: white;
+    border-right-width: 2px;
+    border-right-style: solid;
+    height: 44px !important;
+}
+
+.ver-hor-text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.left-text-center {
+    display: flex;
+    align-items: center;
+}
+
+div#proj-name-zh {
+    height: 30px !important;
+    font-size: 16px !important;
+}
+
+div#proj-name-en {
+    height: 25px !important;
+    font-size: 14px !important;
+}
+
+#navbar-collapse {
+    padding: 0;
+}
+
+/*a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*#project-li a::before {*/
+/*    font-weight: 1000!important;*/
+/*    background-color: black;*/
+/*    color:white;*/
+/*}*/
+
+#up-nav ul.second-menu a {
+    height: 30px !important;
+    font-size: 14px;
+}
+
+#up-nav ul.second-menu .glyphicon::before {
+    position: relative;
+    top: 1px;
+}
+
+#bi-exit::before {
+    font-weight: 800 !important;
+    font-size: 20px;
+}
+#logo::before {
+    font-size: 24px;
+}
+.modal-footer .btn-primary {
+    background-color:#00857c;
+}
+.modal-footer .btn-primary:hover {
+    background-color: #00857c;
+    font-weight: bold;
+}
+.modal-footer .btn-primary:focus {
+    background-color:#00857c;
+    font-weight: bold;
+}
+
+
+/*a:hover, a:visited {*/
+/*    color: white;*/
+/*}*/
+
+.second-menu .glyphicon::before {
+    margin-right: 10px;
+}
+
+#up-nav {
+    font-size: 16px;
+}
+
+
+.second-menu .divider {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+#usr-logo::before {
+    font-size: 20px !important;
+}
+
+.nav-row {
+    /*padding-left: 50px;*/
+    /*padding-right: 50px;*/
+}
+
+#nav-button * {
+    background-color: #00857c;
+}
+
+#up-nav > li {
+    height: 55px;
+    top: 0;
+    vertical-align: top;
+}
+
+ul#up-nav li a {
+    font-size: 18px;
+    color: Black !important;
+    height: 55px;
+
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul#up-nav li:hover .under {
+    border-bottom: 2px solid black;
+}
+
+ul#up-nav li .under * {
+    border-bottom: 0;
+}
+
+
+.active .under {
+    border-bottom: 2px solid black;
+
+}
+
+.under {
+    line-height: 1.1;
+    padding: 0;
+}
+
+
+ul#up-nav li a.glyphicon::before {
+    position: relative;
+    top: 0;
+}
+
+#bi-exit::before {
+    font-size: 16px;
+}
+
+input#file-upload-button {
+    color: white;
+}
+
