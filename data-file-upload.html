@@ -59,6 +59,7 @@
     <!-- optionally if you need translation for your language then include the locale file as mentioned below (replace LANG.js with your language locale) -->
     <script src="static/bootstrap-fileinput/js/locales/LANG.js"></script>
     <link rel="stylesheet" href="static/css/data-file-upload.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
 </head>
 <body>
@@ -262,69 +263,22 @@
 
     <!--上传文件-->
     <div class="row input-row">
-        <input id="input-data-file" type="file" class="file file-loading btn-danger" multiple>
+        <input id="input-data-file" type="file" class="file file-loading" allowedFileExtensions="xlsx, txt,csv">
     </div>
 
-    <!--显示文件-->
+    <!--    <input type="file" id="file-input" accept=".csv,.xlsx">-->
+
+    <!--显示预览-->
     <div class="row show-file-row">
         <h1>Data Preview</h1>
-        <table class="table table-hover text-center">
-            <thead class="thead-center">
-            <tr>
-                <th>Month</th>
-                <th>Region</th>
-                <th>RM</th>
-                <th>DM</th>
-                <th>Product</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>202306</td>
-                <td>DBCentral</td>
-                <td>张三</td>
-                <td>王小强</td>
-                <td>捷诺维</td>
-            </tr>
-            <tr>
-                <td>202306</td>
-                <td>DBCentral</td>
-                <td>张三</td>
-                <td>李丽</td>
-                <td>捷诺维</td>
-            </tr>
-            <tr>
-                <td>202306</td>
-                <td>DBCentral</td>
-                <td>张三</td>
-                <td>董凯</td>
-                <td>捷诺维</td>
-            </tr>
+        <div id="preview-container" class="pre-scrollable">
 
-            </tbody>
-        </table>
+        </div>
     </div>
 
 </div>
 <script type="text/javascript" src="static/js/navbar.js"></script>
+<script type="text/javascript" src="static/js/data-file-upload.js"></script>
 </body>
-<script>
-    $('#input-data-file').fileinput({
-        language: 'en',
-        uploadUrl: '#',
-        dropZoneEnabled: true,
-        // previewSettings:{
-        //     image:{width:"100px",height:"100px"},
-        // },
-        textEncoding: 'UTF-8',
-        previewFileType: 'text',
-        remove: true,
-        showCancel: true,
-        showPreview: true,
-        allowedFileExtensions: ['xlsx', 'txt', 'csv'],
-        elErrorContainer: 'errorBlock',
-        dropZoneTitle: 'Click to upload or drag file HERE </br> Only support csv/txt/xlsx file',
-    });
-</script>
 
 </html>

@@ -55,6 +55,11 @@ div.one-intro:hover {
 .one-intro div.glyphicon {
     top:10px ;
 }
+.one-intro div.bi {
+    position: relative;
+    top:10px ;
+}
+
 .intro-detail {
     position: relative;
     top: 15px;
@@ -67,7 +72,3 @@ div.one-intro:hover {
 /*#top-navbar a:hover{*/
 /*    text-decoration: underline;*/
 /*}*/
-
-#page-header .bi-robot::before {
-    font-size: 20px;
-}
