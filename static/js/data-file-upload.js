@@ -10,9 +10,11 @@ $('#input-data-file').fileinput({
     remove: true,
     showCancel: true,
     showPreview: true,
+    // showCaption: false,
     allowedFileExtensions: ['xlsx', 'txt', 'csv'],
     elErrorContainer: 'errorBlock',
     dropZoneTitle: 'Click to upload or drag file HERE </br> Only support csv/txt/xlsx file',
+    autoDownload: false,
 });
 
 
@@ -82,11 +84,15 @@ $(document).ready(function () {
                 const reader = new FileReader();
                 reader.onload = function (e) {
                     const csvContent = e.target.result;
-                    console.log(csvContent)
+                    // console.log(csvContent)
                     $('#preview-container').html(csvContent);
                 };
                 reader.readAsText(file);
             }
         }
     });
+});
+
+document.getElementsByClassName('fileinput-remove-button')[0].addEventListener('click', function () {
+    $('#preview-container').html('');
 });
