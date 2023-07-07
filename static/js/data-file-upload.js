@@ -15,6 +15,7 @@ $('#input-data-file').fileinput({
     elErrorContainer: 'errorBlock',
     dropZoneTitle: 'Click to upload or drag file HERE </br> Only support csv/txt/xlsx file',
     autoDownload: false,
+    disabledPreviewTypes: ['text'],
 });
 
 
@@ -83,9 +84,11 @@ $(document).ready(function () {
             } else if (fileType === 'txt') {
                 const reader = new FileReader();
                 reader.onload = function (e) {
-                    const csvContent = e.target.result;
+                    const txtContent = e.target.result;
                     // console.log(csvContent)
-                    $('#preview-container').html(csvContent);
+                    let pre_text = $('<pre></pre>');
+                    pre_text.append(txtContent)
+                    $('#preview-container').html(pre_text);
                 };
                 reader.readAsText(file);
             }
