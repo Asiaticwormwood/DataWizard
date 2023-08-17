@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Command Console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="static/css/console.css">
+    <link rel="stylesheet" href="static/bootstrap-3.4.1/css/bootstrap.css">
+    <link rel="stylesheet" href="static/icons/font/bootstrap-icons.min.css" crossorigin="anonymous">
+
+    <script type="text/javascript" src="static/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="static/js/popper-2.11.8.js"></script>
+    <script type="text/javascript" src="static/bootstrap-3.4.1/js/bootstrap.js"></script>
+
+    <!--    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <!--页头-->
+    <div id="page-header" class="row  ver-hor-text-center">
+        <div class="col-md-1 ver-hor-text-center hidden-sm hidden-xs">
+            <span id="logo" class=" col-md-offset-11 ver-hor-text-center bi bi-gpu-card"></span>
+        </div>
+        <div class="col-md-7 hidden-sm hidden-xs">
+            <div id="proj-name-zh" class="left-text-center font-weight-bolder">智能数据分析助手</div>
+            <div id="proj-name-en" class="left-text-center">Data Wizard</div>
+        </div>
+        <div id="header-right-part" class="col-md-4 col-sm-12 col-xs-12">
+            <div class="row">
+                <div id="header-right" class="ver-hor-text-center">
+                    <div class="col-md-5 col-md-offset-1 ver-hor-text-center need-border">
+
+                        <div class="row ver-hor-text-center ">
+                        <span id="usr-logo" class="bi bi-person-circle">&nbsp&nbsp&nbsp
+                        </span>
+                            <a href="">
+                                User
+                            </a>
+
+                        </div>
+                    </div>
+                    <!--                <div class="col-md-1 header-text-center vertical-sep">|</div>-->
+                    <div class="col-md-4 ver-hor-text-center need-border">
+                        <div class="row ver-hor-text-center">
+                            <a href="#">
+                                Document
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 ver-hor-text-center">
+                        <a href="#">
+                            <div id="bi-exit" class="ver-hor-text-center bi bi-box-arrow-right"></div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--            <div id="page-header" class="page-header">-->
+
+        <!--            </div>-->
+    </div>
+
+    <!--导航栏-->
+    <div class="row nav-row">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle btn btn-default" data-toggle="collapse"
+                    data-target="#navbar-collapse" id="nav-button">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul id="up-nav" class="nav navbar-default nav-justified">
+
+                <li role="presentation" class="vertical-center">
+                    <a class="ver-hor-text-center" href="user-guide.html">
+                        <div class="under"><span class="glyphicon glyphicon-home">&nbsp</span>Home</div>
+                    </a></li>
+
+                <li id="project-li" role="presentation" class="dropdown">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <div class="under">
+                            <span class="bi bi-folder-fill">&nbsp</span>Project<span>&nbsp</span>
+                            <b class="caret"></b>
+                        </div>
+                    </a>
+
+                    <ul class="dropdown-menu second-menu">
+                        <li id="createProject" class="text-center">
+                            <a href="#" class="glyphicon glyphicon-plus">New...</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li id="openProject" class="text-center">
+                            <a href="#" class="glyphicon glyphicon-folder-open">Open...</a>
+                        </li>
+                    </ul>
+
+
+                </li>
+                <li role="presentation">
+                    <a class=""
+                       href="data-file-upload.html">
+                        <div class="under">
+
+                            <span class="glyphicon glyphicon-tasks">&nbsp</span>Data File
+                            Upload
+                        </div>
+                    </a></li>
+                <li role="presentation" class="active"><a href="console.html">
+                    <div class="under">
+                        <span class="glyphicon glyphicon-console">&nbsp</span>Command Console
+                    </div>
+                </a></li>
+                <li role="presentation" class="dropdown">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <div class="under">
+                            <span class="glyphicon glyphicon-save">&nbsp</span>Save<span>&nbsp</span>
+                            <b class="caret"></b>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu second-menu">
+<!--                        <li class="text-center download-img">-->
+<!--                            <a href="#" class="">plot1.png</a>-->
+<!--                        </li>-->
+<!--                        <li class="divider"></li>-->
+<!--                        <li class="text-center">-->
+<!--                            <a href="#" class="">plot2.png</a>-->
+<!--                        </li>-->
+<!--                        <li class="divider"></li>-->
+                        <li class="text-center">
+                            <a href="#" class="">document.docx</a>
+                        </li>
+<!--                        <li class="divider"></li>-->
+<!--                        <li id="download-plt" class="text-center">-->
+<!--                            <a href="#" class="">result.csv</a>-->
+<!--                        </li>-->
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- 新建项目模态框 -->
+    <div class="modal fade" id="createProjectModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New Project</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="createProjectForm">
+                        <div class="form-group">
+                            <label for="projectName">Name</label>
+                            <input type="text" class="form-control btn-sm" id="projectName">
+                        </div>
+                        <div class="form-group">
+                            <label for="create-proj-text">Location</label>
+                            <!--                            <input type="file" class="form-control btn-sm" id="folderInput" webkitdirectory>-->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="create-proj-text" readonly>
+                            </div>
+                            <input type="file" id="create-proj-file" style="display: none" webkitdirectory>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="createProjectSubmit">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 打开项目模态框 -->
+    <div class="modal fade" id="openProjectModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Open Project</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="openProjectForm">
+                        <div class="form-group">
+                            <label for="open-proj-text">Location</label>
+                            <!--                            <input type="file" class="form-control" id="folderInputOpen" webkitdirectory>-->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="open-proj-text" readonly>
+                            </div>
+                            <input type="file" id="open-proj-file" style="display: none" webkitdirectory>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="openProjectSubmit">Open</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--项目位置-->
+    <div id="pwd" class="row vertical-center">
+        C:> Users> DataWizard_user> ProjectB
+    </div>
+    <!--上半部分-->
+    <div id="top-half" class="row">
+        <!--prompt文本框-->
+        <div class="col-md-6">
+            <i class="bi bi-arrow-right-circle-fill pull-right" id="submitButton" title="submit"></i>
+            <i class="bi bi-repeat pull-right" id="clearButton" title="clear"></i>
+
+
+            <form id="prompt-form" role="form">
+                <div class="form-group">
+                    <label for="prompt-input">Command</label>
+
+
+                    <textarea id="prompt-input" class="form-control pre-scrollable" rows="10"
+                              placeholder="在这里输入指令...">
+计算每个大区和每个省份在23年Q3分配的FTE，以及相对于23年Q2的增减情况。
+Sales Weight = 60%
+Potential Weight = 40%
+
+数据来源：
+`OC Potential`使用数据文件1中的OC潜力
+`PC Potential`使用数据文件1中的PC潜力
+`Hospital Sales`使用数据文件1中的2204-2303 Total
+既往FTE在数据文件2中
+                    </textarea>
+                </div>
+            </form>
+        </div>
+
+
+        <!--python代码-->
+        <div class="col-md-6">
+            <label for="codeEditor">Python</label>
+            <textarea class="form-control pre-scrollable no-wrap-textarea" rows="6" id="codeEditor">
+import pandas as pd
+import numpy as np
+
+# 读取数据
+df_fte = pd.read_excel('data/all_hosp_dtl.xlsx')
+df_old_fte = pd.read_excel('data/old_fte.xlsx')
+
+# 计算Hospital Total Potential
+df_fte['Hospital Total Potential'] = df_fte['OC潜力'] * 12 + df_fte['PC潜力'] * 4
+
+# 计算Total FTE
+total_fte = df_old_fte['2022 FTE'].sum()
+
+# 计算Sales Weight和Potential Weight
+sales_weight = 0.6
+potential_weight = 0.4
+
+# 计算New allocated Hospital FTE
+df_fte['New allocated Hospital FTE'] = total_fte * ((df_fte['2204-2303 Total'] * sales_weight + df_fte['Hospital Total Potential'] * potential_weight) / (df_fte['2204-2303 Total'] * sales_weight + df_fte['Hospital Total Potential'] * potential_weight).sum())
+
+# 计算Province Round 1 FTE
+df_province_fte = df_fte.groupby(['大区', '省份'])['New allocated Hospital FTE'].sum().reset_index()
+df_province_fte.columns = ['大区', '省份', 'Province Round 1 FTE']
+
+# 计算Province Potential
+df_province_potential = df_fte.groupby(['大区', '省份'])['Hospital Total Potential'].sum().reset_index()
+df_province_potential.columns = ['大区', '省份', 'Province Potential']
+
+# 计算Province Sales
+df_province_sales = df_fte.groupby(['大区', '省份'])['2204-2303 Total'].sum().reset_index()
+df_province_sales.columns = ['大区', '省份', 'Province Sales']
+
+# 合并数据
+df_province = pd.merge(df_province_fte, df_province_potential, on=['大区', '省份'])
+df_province = pd.merge(df_province, df_province_sales, on=['大区', '省份'])
+
+# 计算Province Productivity
+df_province['Province Productivity'] = df_province['Province Sales'] / df_province['Province Round 1 FTE']
+
+# 计算Total Productivity
+total_productivity = df_province['Province Sales'].sum() / total_fte
+
+# 计算FTE Message
+df_province['FTE Message'] = df_province['Province Round 1 FTE']
+df_province.loc[df_province['Province Productivity'] < total_productivity * 0.9, 'FTE Message'] = df_province['Province Round 1 FTE'] * 0.98
+df_province.loc[df_province['Province Productivity'] > total_productivity * 1.1, 'FTE Message'] = df_province['Province Round 1 FTE'] * 1.02
+
+# 计算Message Diff
+df_province['Message Diff'] = df_province['Province Round 1 FTE'] - df_province['FTE Message']
+
+# 计算Advised FTE
+df_province['Advised FTE'] = df_province['FTE Message'].round()
+
+# 合并旧的FTE数据
+df_old_fte.columns = ['大区', '省份', '2022 FTE', '23Q1 FTE', '23Q2 FTE']
+df_province = pd.merge(df_province, df_old_fte, on=['大区', '省份'], how='left')
+
+# 计算FTE Diff
+df_province['FTE Diff'] = df_province['Advised FTE'] - df_province['23Q2 FTE']
+
+# 保存结果
+with pd.ExcelWriter('fte_results/FTE.xlsx') as writer:
+    df_fte.to_excel(writer, sheet_name='Sheet1', index=False)
+    df_province.to_excel(writer, sheet_name='Sheet2', index=False)
+    df_province[['大区', '省份', '2022 FTE', '23Q1 FTE', '23Q2 FTE', 'Advised FTE', 'FTE Diff']].to_excel(writer, sheet_name='Sheet3', index=False)
+
+# 打印结果
+print(df_province[['大区', '省份', 'Advised FTE', 'FTE Diff']])
+        </textarea>
+        </div>
+    </div>
+    <!--            下半部分-->
+    <!--结果输出-->
+    <div id="bottom-half" class="row half-screen-height">
+        <div class="col-md-12">
+            <label for="displayBox" class="center">Output</label>
+            <div class="pre-scrollable well" id="displayBox">
+                <pre>
+在23年第三季度，各大区和省份的FTE分配情况以及与23年第二季度相比的增减情况如下：
+
+1. Lynparza Central大区的山东省分配了25个FTE，相比上一季度增加了4个。
+2. Lynparza Central大区的河南省分配了16个FTE，与上一季度持平。
+3. Lynparza East大区的浙江省分配了28个FTE，相比上一季度增加了2个。
+4. Lynparza East大区的福建省分配了9个FTE，相比上一季度减少了1个。
+5. Lynparza North-1大区的内蒙古自治区分配了4个FTE，相比上一季度减少了1个。
+6. Lynparza North-1大区的北京市分配了14个FTE，相比上一季度增加了约1个。
+7. Lynparza North-1大区的天津市分配了7个FTE，相比上一季度增加了约2.27个。
+8. Lynparza North-1大区的山西省分配了5个FTE，与上一季度持平。
+9. Lynparza North-1大区的河北省分配了1个FTE，相比上一季度减少了约0.27个。
+10. Lynparza North-2大区的北京市分配了10个FTE，与上一季度持平。
+11. Lynparza North-2大区的河北省分配了7个FTE，相比上一季度减少了4个。
+12. Lynparza West大区的云南省分配了5个FTE，与上一季度持平。
+13. Lynparza West大区的宁夏回族自治区分配了1个FTE，与上一季度持平。
+14. Lynparza West大区的新疆维吾尔自治区分配了3个FTE，相比上一季度减少了2个。
+15. Lynparza West大区的湖南省分配了10个FTE，与上一季度持平。
+16. Lynparza West大区的贵州省分配了3个FTE，相比上一季度减少了1个。
+17. Lynparza West大区的陕西省分配了6个FTE，与上一季度持平。
+18. Lynparza West大区的青海省分配了1个FTE，与上一季度持平。
+
+总的来说，大部分地区的FTE分配在23年第三季度与上一季度相比变化不大，有些地区有所增加，有些地区有所减少。
+                </pre>
+            </div>
+
+        </div>
+    </div>
+    <!--上部导航栏-->
+    <!--test-->
+</div>
+<script type="text/javascript" src="static/js/navbar.js"></script>
+<script type="text/javascript" src="static/js/console.js"></script>
+</body>
+
+</html>
